@@ -1,0 +1,133 @@
+<! doctype html>
+<html>
+<head>
+  <title>통계지표 이해하기</title>
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <h1><a  href="1.html">계량이랑 class</a></h1>
+<ol>
+</ol>>
+<li><a href="2.html"target="_blank">모집단과 표본 개념잡기</a></li>
+  <li><a href="3.html"target="_blank">데이터 시각화</a></li>
+  <li><a href="4.html"target="_blank">통계지표 이해하기</a></li>
+  <li><a href="5.html"target="_blank">확률변수 파헤치기</a> </li>
+  <li><a href="6.html"target="_blank">확률변수 파헤치기</a> </li>
+  <li><a href="7.html"target="_blank">모평균과 모비율 추정하기</a> </li>
+  <li><a href="8.html"target="_blank">가설검정 이해하기</a> </li>
+</ol>
+<pre>
+<h1>통계지표 이해하기</h1>
+
+<h3>(1)표본평균</h3>
+
+표본평균은 <strong>분포의 중심을 잡아내는 통계 지표</strong>입니다.
+다들 고등학생때 중간고사/기말고사에서 반평균 점수에 대해 한번씩 들어본 적 있을 겁니다
+(반 평균이 다른 반보다 낮다고 잔소리 들은 기억이 생각납니다 ㅎㅎ )
+
+반평균이 성적 분포의 중심을 표현한 지표 역할을 한 것입니다.
+
+이처럼 표본 평균은 데이터 값을 가장 잘 대표하는 값 중 하나입니다.
+
+구하는 방법도 아주 간단합니다.
+표본 값을 다 더한다음 표본의 갯수로 나누어주면 됩니다.
+엑셀에서는 =Average()함수를 이용할 수 있습니다.
+
+ex) 1,3,5,2,4라는 표본이 주어졌을 때 표본평균(X bar)은 (1+3+5+2+4)/5 = 3 입니다.
+<h3>(2)표본 중앙값</h3>
+분포의 중심을 잡아내는 또 다른 통계지표입니다.
+
+중앙값은 데이터를 순서대로 나열한 후 정중앙에 위치한 데이터를 말합니다.
+표본의 갯수가 홀수냐 짝수냐에 따라 구하는 방법이 조금 달라집니다.
+엑셀에서는 =MEDIAN()을 사용하면 됩니다.
+
+ex) 1,3,5,2,4라는 표본이 주어졌을 때 일단 정렬을 해주어야 합니다
+1,2,3,4,5로 정렬한 후 가운데 값인 3이 중앙값이 됩니다.
+
+표본의 갯수가 짝수개인 1,2,3,4,5,6이라면 중앙은 3과 4 평균이 되야 합니다
+따라서 (3+4)/2 =3.5 가 중앙값이 됩니다.
+
+
+<h3>(3) 표본 평균과 중앙값과의 관계</h3>
+
+여기까지만 보면 표본 평균과 중앙값이 비슷하다는 느낌이 드는데요, 차이점과 공통점을 비교해보겠습니다.
+
+공통점 : 데이터 분포의 중심을 잡아냅니다
+차이점: 극단적으로 크거나 작은 값, <u>즉 극단값에 대한 반응이 다릅니다.</u>
+표본 평균의 경우 극단값에 민감하게 반응하지만 중앙값은 극단값에 무덤덤하게 반응합니다.
+
+예를 들어보겠습니다.
+표본데이터가 1,2,3,4,5에서 1,2,3,4,5,999999가 되었다고 생각해 봅시다.
+표본 평균은 3에서 166669로 엄청 커집니다.
+바로 새로 들어온 표본 999999에 민감하게 반응하기 때문이죠.
+하지만 중앙값은 3에서 3.5로 거의 변화가 없습니다.
+
+표본 평균의 계산식은 표본값 전체를 사용하기 때문에 중앙값보다 민감하게 반응할 수 밖에 없습니다.
+
+이런 중앙값과 표본 평균값을 이용해서 우리는 확률변수의 분포에 대한 추가정보를 얻을 수 있습니다.
+
+(1) 대칭분포인 경우 표본평균 = 중앙값
+(2) 오른쪽으로 치우친 분포인 경우 표본평균 값>중앙값
+(3) 왼쪽으로 치우친 분포인 경우 표본 평균< 중앙값
+
+<h3>(4) IQR(interquartile range) </h3>
+분포의 퍼짐을 잡아내는 IQR(interquartile range)에 대해 알아보겠습니다.
+중앙값 역시 분포의 퍼짐을 알아낼 수 있다고 했는 데 IQR역시 중앙값과 밀접한 관계가 있습니다.
+
+-사분위수 (Quartile)
+중앙값은 말 그대로 중앙값. 전체 표본들 중 50%가 중앙값 보다 <strong>작다</strong>
+                                     전체 표본들 중 50%가 중앙값 보다 <strong>작다</strong>
+
+사분위수는 중앙값 개념을 확장시킨 개념. 데이터 분포를 퍼센트 기준으로 4등분하는 기준값입니다.
+25%(1사분위수),50%(2사분위수=중앙값),75%(3사분위수)
+이름과는 다르게 4사분위수라는 개념은 없다는 점 유의하세요:)
+
+사분위수를 찾는 예제를 풀어보겠습니다.
+2,4,4,5,6,7,8 이라는 데이터 셋이 있습니다.
+
+(1) 중앙값을 먼저 찾습니다 -->5 (중앙값이면서 2사분위수에 해당합니다)
+
+(2) 사분위 수를 구합니다.
+
+-1 사분위수는 중앙값보다 <u>작은</u> 표본들의 중앙값을 의미합니다.
+그러니까 여기서는 (2,4,4)의 중앙값인 4가 1사분위수가 됩니다
+
+-3 사분위수는 중앙값보다 <u>큰</u> 표본들의 중앙값
+그러니까 여기서는 (6,7,8)의 중앙값인 7이 3사분위수가 됩니다.
+
+사분위간 범위 (interquartile range) IQR은 1사분위와 3사분위 사이의 거리
+IQR=3Q-1Q를 이용해 구할 수 있습니다.
+
+즉, 전체 데이터를 크기순으로 정렬했을 때, 가운데 50%를 차지하는 표본들의 범위를 잡아낸다
+
+<분포1> 3,4,5,6,7 -->IQR=3
+<분포2> 1,3,5,7,9 --> IQR =6
+
+IQR을 기준으로 보았을 때, 분포2가 분포1보다 2배 넓게 퍼져있다고 생각할 수 있습니다.
+</pre>
+
+<p>
+  <div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://econmetrics.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</p>
+</body>
+</html>
